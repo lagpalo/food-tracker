@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+	</head>
+	<body>
+		<h1>My Food Tracker - Add Meal</h1>
+		<form role="form" action="" method="POST">
+		    {% csrf_token %}
+			<table class="table table-bordered table-striped">
+				<tbody>
+					<tr>
+						<td>Food</td>
+						<td>{{ meal_form.food }}</td>
+					</tr>
+					<tr>
+						<td>Serving Size</td>
+						<td>{{ meal_form.serving_size }}</td>
+					</tr>
+					<tr>
+						<td>Meal Time</td>
+						<td>{{ meal_form.meal_time }}</td>
+					</tr>
+				</tbody>
+			</table>
+			<button type="submit" class="btn btn-success">Save</button>
+			<a href='{% url 'food:index' %}' class='btn btn-info'>Back</a>
+		</form>
+	</body>
+</html>
